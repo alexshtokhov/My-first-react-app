@@ -1,8 +1,9 @@
+import style from "./Post.module.css";
 
 
 const Post = (props) => {
     return (
-        <div>
+        <div className={style.postBlock}>
             {props.message}
         </div>
     )

@@ -1,14 +1,11 @@
-import banner from "../../img/dsquared2-banner.jpg";
-import styles from './Profile.module.css';
+
 import MyPosts from "./MyPosts/MyPosts";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = () => {
     return (
-        <div className={styles.content}>
-            <img src={banner}/>
-            <div>
-                ava + description
-            </div>
+        <div>
+            <ProfileInfo/>
             <MyPosts/>
         </div>
     )

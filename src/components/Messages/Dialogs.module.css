@@ -1,0 +1,13 @@
+.all {
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+}
+.dialogs {
+    padding: 30px;
+}
+.messages {
+    padding: 30px;
+}
+.dialog {
+    padding: 10px;
+}
