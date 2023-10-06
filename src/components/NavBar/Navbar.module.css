@@ -1,0 +1,20 @@
+
+.nav {
+    grid-area: nav;
+    background-color: darkcyan;
+    height: 200px;
+    padding: 10px;
+}
+.item a {
+    font-size: 18px;
+    color: aliceblue;
+    margin-left: 20px;
+    text-decoration: none;
+}
+.item {
+    margin-top: 10px;
+}
+.item a.active {
+    font-size: 24px;
+    color: grey;
+}
