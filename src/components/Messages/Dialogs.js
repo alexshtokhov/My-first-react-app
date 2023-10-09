@@ -1,23 +1,20 @@
 import React from "react";
 import style from "./Dialogs.module.css";
-import {NavLink} from "react-router-dom";
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
 
-const Dialogs = () => {
+const Dialogs = (props) => {
+
+    const dialogsEl = props.dialogs.map((dialog) => <DialogItem name={dialog.name} id={dialog.id}/>);
+    const messageEl = props.messages.map((message) => <Message text={message.text}/>);
+
     return (
         <div className={style.all}>
             <div className={style.dialogs}>
-                <DialogItem name="Sasha" id="1" />
-                <DialogItem name="Masha" id="2" />
-                <DialogItem name="Dasha" id="3" />
-                <DialogItem name="Jora" id="4" />
+                {dialogsEl}
             </div>
             <div className={style.messages}>
-                <Message text='Hi! How are you?'/>
-                <Message text='Hi! How are you?'/>
-                <Message text='Hi! How are you?'/>
-                <Message text='Hi! How are you?'/>
+                {messageEl}
             </div>
         </div>
     )

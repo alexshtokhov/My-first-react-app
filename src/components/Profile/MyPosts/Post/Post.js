@@ -5,6 +5,9 @@ const Post = (props) => {
     return (
         <div className={style.postBlock}>
             {props.message}
+            <div>
+                <p>Like {props.likesCount}</p>
+            </div>
         </div>
     )
 };

@@ -1,7 +1,11 @@
 import Post from "./Post/Post";
 import style from "./MyPosts.module.css";
 
-const MyPosts = () => {
+const MyPosts = (props) => {
+
+
+    let postEl = props.posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>);
+
     return (
         <div>
             <div className={style.area}>
@@ -11,11 +15,9 @@ const MyPosts = () => {
                 <button>Add post</button>
                 <button>Remove post</button>
             </div>
-            <Post message='hello'/>
-            <Post message='Blalalallala'/>
-            <Post message='How are you?'/>
-            <Post/>
-            <Post/>
+            <div className={style.area}>
+                {postEl}
+            </div>
         </div>
     )
 };
