@@ -1,6 +1,8 @@
 import style from "./DialogItem.module.css";
 import {NavLink} from "react-router-dom";
 import React from "react";
+import female from "../../../img/avaFemale.jpeg"
+import male from "../../../img/avaMale.png"
 
 
 const DialogItem = (props) => {
@@ -9,6 +11,7 @@ const DialogItem = (props) => {
 
     return  (
         <div className={style.dialog}>
+            <img src={female} className={style.avatar}/>
             <NavLink to={path}>{props.name}</NavLink>
         </div>
     )

@@ -1,6 +1,7 @@
 .all {
     display: grid;
     grid-template-columns: 3fr 9fr;
+    grid-template-rows: auto;
 }
 .dialogs {
     padding: 30px;

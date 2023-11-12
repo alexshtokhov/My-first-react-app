@@ -1,0 +1,12 @@
+
+.friendsBlock{
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 40px;
+}
+
+.avatar {
+    width: 60px;
+}

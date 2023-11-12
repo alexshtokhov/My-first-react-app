@@ -1,4 +1,10 @@
 .postBlock {
     margin-top: 10px;
     margin-bottom: 10px;
+    align-items: center;
+}
+.ava {
+    width: 80px;
+    background: none;
+    margin-top: 10px;
 }
