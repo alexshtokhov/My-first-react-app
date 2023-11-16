@@ -1,17 +1,19 @@
 import Post from "./Post/Post";
 import style from "./MyPosts.module.css";
 import React from "react";
-
+import {addPostActionCreator, updatePostActionCreator} from "../../../Redux/state";
 const MyPosts = (props) => {
 
     let postEl = props.posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>);
     const newPostElement = React.createRef();
+
+
     const addPosts = () => {
-        props.addPost();
+        props.dispatch(addPostActionCreator());
     }
     const onPostChange = () => {
         let text = newPostElement.current.value;
-        props.updatePost(text);
+        props.dispatch(updatePostActionCreator(text));
     }
     return (
         <div>
@@ -19,7 +21,7 @@ const MyPosts = (props) => {
                 <textarea
                     onChange={onPostChange}
                     ref={newPostElement}
-                value={props.text}/>
+                    value={props.newPost}/>
             </div>
             <div className={style.buttons}>
                 <button onClick={addPosts}>Add post</button>
