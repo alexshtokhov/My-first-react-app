@@ -1,6 +1,6 @@
 
 import './index.css';
-import store  from "./Redux/state";
+import store  from "./Redux/redux-store";
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -12,11 +12,14 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 const renderEntire = (appState) => {
     root.render(
         <React.StrictMode>
-            <App appState={appState} dispatch={store.dispatch.bind(store)} />
+            <App store={store} appState={appState} dispatch={store.dispatch.bind(store)} />
         </React.StrictMode>
     );
 }
 
 renderEntire (store.getState());
 
-store.subscribe(renderEntire);
+store.subscribe( () => {
+    const state = store.getState();
+    renderEntire(state);
+} );
